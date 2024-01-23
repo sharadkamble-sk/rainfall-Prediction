@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rainfall_Prediction</title>
+<style>
+
+  body {
+    font-family: Arial, sans-serif;
+    background-image: url("/static/images/Rain_img.jpg");
+    background-size: cover;
+    background-position:  center;
+    color: #1a1818;
+    margin: 0;
+    padding: 0;
+    
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: rgba(248, 241, 241, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+   .heading {
+            text-align: center;
+            color: #333;
+        }
+
+   .form {
+            display: flex;
+            flex-direction: column;
+            padding: 0 10% 0 10%;
+        }
+
+  .form-group {
+            margin-bottom: 15px;
+        }
+
+  label {
+    font-weight: bolder;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .predict-btn {
+            width: 30%;
+            padding: 10px;
+            background-color: #1388b7;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 0 auto; 
+            display: block;
+        }
+
+        .predict-btn:hover {
+            background-color: #e3a410;
+        }
+      
+        select {
+                width: calc(100% - 22px);
+                padding: 8px 10px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                /* appearance: none;  */
+                background-repeat: no-repeat;
+                background-position: right 8px top 50%;
+                background-size: 16px;
+                background-color: #fff;
+                cursor: pointer;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #2980b9;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+	
+	.prediction-result {
+            display: none;
+            margin-top: 20px;
+            border: 1px solid #2895c7;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+</style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="heading">Rainfall_Prediction</h1>
+        <form action="/predict" method="post" class="form">
+
+            <div class="form-group">
+                <label for="rainfall">Rainfall:</label>
+                <input type="text" id="rainfall" name="rainfall"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="sunshine">Sunshine:</label>
+                <input type="text" id="sunshine" name="sunshine"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="windgustspeed">WindGustSpeed:</label>
+                <input type="text" id="windgustspeed" name="windgustspeed"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="humidity3pm">Humidity3pm:</label>
+                <input type="text" id="humidity3pm" name="humidity3pm"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="pressure3pm">Pressure3pm:</label>
+                <input type="text" id="pressure3pm" name="pressure3pm"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="cloud9am">Cloud9am:</label>
+                <input type="text" id="cloud9am" name="cloud9am"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="cloud3pm">Cloud3pm:</label>
+                <input type="text" id="cloud3pm" name="cloud3pm"><br>
+            </div>
+
+
+            <div class="form-group">
+                <label for="raintoday">RainToday:</label>
+                <input type="text" id="raintoday" name="raintoday"><br>
+            </div>
+
+            <button type="submit" class="predict-btn">Predict_Rainfall</button>
+        </form>
+        
+    </div>
+
+</body>
+</html>
