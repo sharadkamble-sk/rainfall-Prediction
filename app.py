@@ -33,7 +33,6 @@ def predict():
                 return render_template("Rainfall.html")
             else:
                 return render_template("Sunny.html")
-
         except ValueError:
             # Handle the case where form values are not valid floats
             return render_template("error.html", error_message="Invalid input. Please enter numeric values.")
